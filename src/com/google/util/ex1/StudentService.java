@@ -48,8 +48,26 @@ public class StudentService {
 	
 	//학생을 검색하는 메서드
 	public void search() {
-		Scanner sc = new Scanner(System.in);
+		studentDTO [] ar = new studentDTO[3];
+		ar = this.init();
+				
+		StudentView sv = new StudentView();
 		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("검색할 학생이름을 입력해 주세요.");
+		
+		String checkName = sc.next();
+		
+		// studentDTO에서 학생들의 정보를 받아오기
+		for(int i = 0;i<ar.length;i++) {
+			String studentName = ar[i].getName();
+			
+			if(checkName.equals(studentName))
+			{
+				sv.view(ar[i]);
+				break;
+			}
+		}
 	}
 	
 }
