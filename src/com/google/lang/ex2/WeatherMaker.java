@@ -5,7 +5,7 @@ public class WeatherMaker {
 	private String info;
 	
 	public WeatherMaker() {
-		this.info = "서울-대전- 대구-부산-인천-제주";
+		this.info = "서울,12,25.2,대전,3,65.2,대구#56&85.9";	// 다른 데이터 형식(기호)가 섞여 있어 전처리 과정이 필요함
 	}
 	
 	public WeatherDTO [] init() {
