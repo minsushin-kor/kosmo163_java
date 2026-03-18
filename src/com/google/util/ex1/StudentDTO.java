@@ -1,6 +1,6 @@
 package com.google.util.ex1;
 
-public class studentDTO {
+public class StudentDTO {
 	// 학생 이름, 
 	
 	private String name;

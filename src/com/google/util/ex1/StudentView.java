@@ -3,7 +3,7 @@ package com.google.util.ex1;
 public class StudentView {
 
 	// 학생이 정보를 출력하는 역할
-	public void view(studentDTO studentDTO) {
+	public void view(StudentDTO studentDTO) {
 		
 		System.out.println("이름 : " + studentDTO.getName());
 		System.out.println("국어 : " + studentDTO.getKor());
@@ -12,7 +12,7 @@ public class StudentView {
 		System.out.println("======================");
 	}
 	
-	public void view(studentDTO [] students) {
+	public void view(StudentDTO [] students) {
 		for(int i = 0;i<students.length;i++) {
 			this.view(students[i]);
 		}

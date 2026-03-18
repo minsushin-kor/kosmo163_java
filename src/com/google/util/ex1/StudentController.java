@@ -9,7 +9,7 @@ public class StudentController {
 		
 		StudentService studentServ = new StudentService();
 		StudentView studentView = new StudentView();
-		studentDTO [] ar = null;
+		StudentDTO [] ar = null;
 		
 		System.out.println("1. 학생정보 초기화, 2. 학생정보 출력, 3. 학생정보 검색, 4. 프로그램 종료");
 		
@@ -26,7 +26,13 @@ public class StudentController {
 			}
 			
 			else if (startSc == 3) {
-				studentServ.search();
+				StudentDTO studentDTO = studentServ.search(ar);
+				if(studentDTO != null) {
+					studentView.view(studentDTO);
+				}
+				else {
+					System.out.println("찾는 정보가 없습니다.");
+				}
 				
 			}
 			

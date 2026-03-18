@@ -13,7 +13,7 @@ public class StudentService {
 	}
 	
 	//학생 정보를 초기화 하는 메서드
-	public studentDTO [] init() {
+	public StudentDTO [] init() {
 		// data에 있는 정보들을 파싱(parsing) 작업을 진행
 		// 사람 간의 구별을 위해 "======================" 출력하기
 		StringTokenizer st = new StringTokenizer(this.data, "-");
@@ -21,11 +21,11 @@ public class StudentService {
 		// 아래 코드 중 setter를 통해 DTO에 저장한 정보는 지역 변수이기 때문에 학생 정보가 달라질 때 새로운 학생 정보로 바뀌게 된다.
 		// 학생 정보들을 받을 수 있는 배열을 생성
 		
-		studentDTO [] ar = new studentDTO[3];
+		StudentDTO [] ar = new StudentDTO[3];
 		int index = 0;
 		
 		while(st.hasMoreTokens()) {
-			studentDTO dto = new studentDTO(); // 학생 수 만큼 studentDTO 객체 생성
+			StudentDTO dto = new StudentDTO(); // 학생 수 만큼 studentDTO 객체 생성
 			
 			String s1 = st.nextToken();
 			dto.setName(s1); // DTO 값에 학생 정보를 입력하기 위해 setter 함수를 사용
@@ -46,9 +46,9 @@ public class StudentService {
 		return ar;
 	}
 	
-	//학생을 검색하는 메서드
-	public void search() {
-		studentDTO [] ar = new studentDTO[3];
+	//학생을 검색하는 메서드(내가 한것)
+	public void search2() {
+		StudentDTO [] ar = new StudentDTO[3];
 		ar = this.init();
 				
 		StudentView sv = new StudentView();
@@ -68,6 +68,19 @@ public class StudentService {
 				break;
 			}
 		}
+	}
+	
+	public StudentDTO search(StudentDTO [] ar) {
+		System.out.println("학생 이름을 입력");
+		Scanner sc = new Scanner(System.in);
+		
+		String name = sc.next();
+		for(int i = 0;i<ar.length;i++) {
+			if(name.equals(ar[i].getName())) {
+				return ar[i];
+			}
+		}
+		return null;
 	}
 	
 }
