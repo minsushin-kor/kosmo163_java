@@ -1,5 +1,6 @@
 package com.google.util.ex1;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentController {
@@ -9,9 +10,14 @@ public class StudentController {
 		
 		StudentService studentServ = new StudentService();
 		StudentView studentView = new StudentView();
-		StudentDTO [] ar = null;
+		//StudentDTO [] ar = null;
+		ArrayList<StudentDTO> ar = null;
 		
-		System.out.println("1. 학생정보 초기화, 2. 학생정보 출력, 3. 학생정보 검색, 4. 프로그램 종료");
+		System.out.println("1. 학생정보 초기화");
+		System.out.println("2. 학생정보 출력");
+		System.out.println("3. 학생정보 검색");
+		System.out.println("4. 학생 정보를 추가");
+		System.out.println("5. 프로그램 종료");
 		
 		while(isExit) {
 			int startSc = sc.nextInt();
@@ -33,6 +39,11 @@ public class StudentController {
 				else {
 					System.out.println("찾는 정보가 없습니다.");
 				}
+				
+			}
+			
+			else if (startSc == 4) {
+				studentServ.add2(ar);
 				
 			}
 			
