@@ -17,7 +17,8 @@ public class StudentController {
 		System.out.println("2. 학생정보 출력");
 		System.out.println("3. 학생정보 검색");
 		System.out.println("4. 학생 정보를 추가");
-		System.out.println("5. 프로그램 종료");
+		System.out.println("5. 검색한 학생 정보 삭제");
+		System.out.println("6. 프로그램 종료");
 		
 		while(isExit) {
 			int startSc = sc.nextInt();
@@ -43,8 +44,11 @@ public class StudentController {
 			}
 			
 			else if (startSc == 4) {
-				studentServ.add2(ar);
-				
+				studentServ.add2(ar);	
+			}
+			
+			else if (startSc == 5) {
+				studentServ.delete(ar);
 			}
 			
 			else {

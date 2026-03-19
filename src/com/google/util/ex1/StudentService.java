@@ -161,5 +161,20 @@ public class StudentService {
 		ar.add(studentDTO);
 	}
 	
-	
+	// 학생의 이름을 입력해서 일치하는 학생의 정보를 삭제(메서드 이름은 delete)
+	public void delete(ArrayList<StudentDTO> ar) {
+		System.out.println("학생의 이름을 입력해주세요.");
+		String name = sc.next();
+		
+		for(int i = 0;i<ar.size();i++)
+		{
+			if(ar.get(i).getName().equals(name))
+			{
+				ar.remove(i);
+				//해당 메서드는 void를 return으로 받고 있다. 
+				// >>>> 즉, 해당 메서드를 종료하기 위해 return;을 통해 종료시킬 수 있다.
+				return; // break;를 사용해도 된다. 
+			}
+		}
+	}
 }
